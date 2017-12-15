@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import { BrowserRouter as Router,Route,Link,Switch } from 'react-router-dom'
+import { HashRouter as Router,Route,Link,Switch } from 'react-router-dom'
 import './app.css'
 import Home from '../Home/Home'
 import ShowTopic from '../ShowTopic/ShowTopic'
