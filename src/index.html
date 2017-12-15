@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id='name'></div>
+  <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdn.bootcss.com/axios/0.17.1/axios.min.js"></script>
+  <script>
+    var xml = new XMLHttpRequest()
+
+    //GET 请求
+      // xml.onreadystatechange=function(){
+      //   if (xml.readyState==4 && xml.status==200){
+      //     var username = JSON.parse(xml.responseText).login
+      //     document.getElementById('name').innerHTML = username
+      //   }
+      // }
+      // xml.open('GET','https://api.github.com/users/april-tal',true)
+      // xml.send()
+
+    //POST 请求
+      // xml.open('POST','https://cnodejs.org/api/v1/accesstoken',true)
+      // xml.setRequestHeader("Content-type","application/json")
+      // xml.send('{"accesstoken":"7c2bf5e1-5b4d-42fd-b8d5-7a6d846480ae"}')
+      // xml.onreadystatechange=function(){
+      //   if (xml.readyState==4 && xml.status==200){
+      //     var username = JSON.parse(xml.responseText).loginname
+      //     document.getElementById('name').innerHTML = username
+      //
+      //   }
+      // }
+
+    //jquery 的 ajax
+    // GET
+      // $.ajax({
+      //   url:'https://api.github.com/users/april-tal',
+      //   success:function(data,status,xhr){
+      //     document.getElementById('name').innerHTML=data.login
+      //   },
+      //   error:function(error){
+      //     console.log("获取数据失败")
+      //   }
+      // })
+
+    //POST  向服务器发送数据
+    //设置发送数据的类型 contentType:'application/json'
+      // $.ajax({
+      //   url:'https://cnodejs.org/api/v1/accesstoken',
+      //   method:'POST',
+      //   contentType:'application/json',
+      //   data:'{"accesstoken":"7c2bf5e1-5b4d-42fd-b8d5-7a6d846480ae"}',
+      //   success:function(data,status,xhr){
+      //     console.log(data,status,xhr)
+      //     document.getElementById('name').innerHTML=data.loginname
+      //   },
+      //   error:function(error){
+      //     console.log("获取数据失败")
+      //   }
+      // })
+
+      //Promise    对象
+      //pending    执行中
+      //resolve    执行完毕
+      //reject     失败
+      // var time = new Promise(function(resolve,reject){
+      //   console.log('正在干活')
+      //   setTimeout(function(){
+      //     resolve(122)
+      //   },2000)
+      // })
+      // time.then(function(num){
+      //   console.log(num)
+      //   console.log('终于干完了')
+      // })
+      // time.catch(function(){
+      //   console.log('干不完')
+      // })
+
+      //fetch  ajax
+        // fetch('https://api.github.com/users/april-tal').then(function(data){
+        //   return data.json()
+        // }).then(function(obj){
+        //   console.log(obj)
+        // }).catch(function(){
+        //   console.log('失败')
+        // })
+        
+    //axios get
+      // axios.get('https://api.github.com/users/april-tal')
+      // .then(function(res){
+      //   console.log(res.data)
+      // })
+      // .catch(function(err){
+      //   console.log(err)
+      // })
+
+    //axios post
+      axios.post('https://cnodejs.org/api/v1/accesstoken',{accesstoken:"7c2bf5e1-5b4d-42fd-b8d5-7a6d846480ae"})
+      .then(function(res){
+        console.log(res.data)
+      })
+      .catch(function(err){
+        console.log(err)
+      })
+  </script>
+</body>
+</html>
