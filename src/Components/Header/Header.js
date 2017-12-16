@@ -56,20 +56,20 @@ class Header extends React.Component {
     return (
       <header>
         <Link to='/'>
-          <img style={{width:'200px'}} src="https://o4j806krb.qnssl.com/public/images/cnodejs_light.svg" alt=""/>
+          <img style={{width:'121px'}} src="https://o4j806krb.qnssl.com/public/images/cnodejs_light.svg" alt=""/>
         </Link>
         {
-          login ? (<div>
+          login ? (<div className='login'>
             <Link to='/topic/create'>
               <button>发布话题</button>
             </Link>
             <Link to={`/user/${userInfo.loginname}`}>
               <img src={userInfo.avatar_url} alt="111"/>
             </Link>
-            <button onClick={this.handleLogout}>退出</button>
+            <span onClick={this.handleLogout}>退出</span>
           </div>) : (<div>
             <input type="text" value={token} onChange={this.handleChange}/>
-            <button onClick={this.handleLogin}>登录</button>
+            <span onClick={this.handleLogin}>登录</span>
           </div>)
         }
       </header>

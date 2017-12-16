@@ -1,5 +1,5 @@
 .userinfo{
-  width: 95%;
+  width: 62%;
   margin: 0 auto;
   border-radius: 5px;
   background-color: #fff;
@@ -13,6 +13,10 @@
 }
 .userinfo  p{
   margin: 0;
+}
+.userinfo a{
+  text-decoration: none;
+  color: #333;
 }
 .userinfo .recent_topics, .userinfo .recent_replies{
   display: flex;

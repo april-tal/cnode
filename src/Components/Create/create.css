@@ -1,0 +1,48 @@
+.release{
+  width: 62%;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 15px;
+}
+.release .title{
+  padding: 10px;
+  background-color: #f6f6f6;
+  border-bottom: 1px solid #e5e5e5;
+}
+.release .title a{
+  text-decoration: none;
+  color: #80bd01;
+}
+.release .title span{
+  color: #999;
+}
+.release input{
+  outline: none;
+  width: 96%;
+  margin: 0 auto;
+  border-radius: 7px;
+  line-height: 38px;
+  border: 1px solid #ccc;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.release button{
+  border-radius: 3px;
+  background-color: #08c;
+  outline: none;
+  border: none;
+  width: 60px;
+  line-height: 33px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 10px;
+  margin-top: 15px;
+}
+textarea{
+  height: 400px;
+  outline: 0;
+}

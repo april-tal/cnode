@@ -1,5 +1,7 @@
 import React from 'react'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
+import './create.css'
 
 class Create extends React.Component {
   state = {
@@ -37,8 +39,12 @@ class Create extends React.Component {
   }
   render () {
     return (
-      <div>
-        <input type="text" onChange={ this.handleTitle } />
+      <div className='release'>
+        <div className="title">
+          <Link to='/'>主页</Link>/
+          <span>发布话题</span>
+        </div>
+        <input type="text" placeholder='标题字数10字以上' onChange={ this.handleTitle } />
         <textarea value={ this.state.content } onChange={ this.handleContent }></textarea>
         <button onClick={ this.handleSubmit }>提交</button>
       </div>
