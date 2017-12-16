@@ -58,7 +58,7 @@
 .active{
   background: #80bd01;
   color: #fff;
-  font-size: 12px;
+  /*font-size: 12px;*/
   padding: 2px 4px;
   border-radius: 3px;
 }

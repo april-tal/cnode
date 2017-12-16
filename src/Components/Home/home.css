@@ -21,7 +21,7 @@
 .tabs>span:hover{
   color: #08c;
 }
-.tabs>span.active{
+.tabs span.active{
   background-color: #80bd01;
   color: white;
 }

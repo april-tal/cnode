@@ -4,21 +4,12 @@ import ShowTopics from '../ShowTopics/ShowTopics'
 import './home.css'
 
 class Home extends React.Component {
-  //默认初始化20条数据
-  getInitData = () => {
-    var data =[];
-    for(var i = 0; i < 20; i++){
-      data.push({});
-    }
-    return data;
-  }
-
   state = {
-    data: this.getInitData()
+    data :[],
+    tab:'all'
   }
 
   getData = (tab) => {
-
     axios.get(`https://cnodejs.org/api/v1/topics?tab=${tab !== 'all' ? tab : ''}`)
     .then((res)=>{
       this.setState({
@@ -30,16 +21,15 @@ class Home extends React.Component {
     })
   }
 
-  componentWillMount() {
-
-  }
-
   componentDidMount() {
     this.getData('all')
   }
 
   handleClick = (tab) => {
     this.getData(tab)
+    this.setState({
+      tab : tab
+    })
   }
 
   render () {
@@ -66,13 +56,12 @@ class Home extends React.Component {
       }
     ]
 
-    const data = this.state.data
-
+    const {data,tab} = this.state
     return (
       <div className='content'>
         <div className="tabs">
           {tabs.map( (item,index)=>(
-            <span key={ index } onClick={() => { this.handleClick(item.tab) }}>{ item.text }</span>
+            <span key={ index } className={`${tab===item.tab&&'active'}`} onClick={() => { this.handleClick(item.tab) }}>{ item.text }</span>
           ))}
         </div>
         <ShowTopics data={ data }/>
